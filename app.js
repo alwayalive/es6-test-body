@@ -1,3 +1,4 @@
+"use strict";
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -65,8 +66,12 @@ if( app.get('env') === 'development'){
         config = require('./webpack.config.js'),
         proxy = require('proxy-middleware'),
         url = require('url');
-        
-    config.entry.app.unshift("webpack-dev-server/client?http://localhost:8080/", "webpack/hot/dev-server");
+
+    Object.keys( config.entry ).forEach( v => {
+        config.entry[ v ].unshift("webpack-dev-server/client?http://localhost:8080/", "webpack/hot/dev-server");
+    });
+
+    // config.entry.app.unshift("webpack-dev-server/client?http://localhost:8080/", "webpack/hot/dev-server");
     // ## proxy the request for static assets
     app.use('/build', proxy(url.parse('http://localhost:8080/build')));
     app.use('/public', proxy(url.parse('http://localhost:8080/public')));
