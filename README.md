@@ -1,3 +1,13 @@
-### es6-test-body
+### react-redux-router-template
 
-this is test base class，you can use es6 syntax and nodejs server for write test example
+`react测试空环境`
+
+#### packages
+
+> react
+> react redux
+> react router
+> redux thunk
+> redux devtool
+> etc..
+

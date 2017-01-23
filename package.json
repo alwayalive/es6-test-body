@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --progress --profile --colors --hot",
-    "dev": "NODE_ENV=development node bin/www",
+    "dev": "Nebpack-dev-server --progress --profile --colors --hot",
     "pro": "NODE_ENV=production node bin/www",
-    "build": "webpack --progress --profile --colors --config webpack.config.js"
+    "build": "webpack --progress --profile --colors --config webpack.config.js",
+    "dll": "webpack --progress --profile --colors --config dll.webpack.config.js"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
@@ -15,18 +16,32 @@
     "express": "~4.13.4",
     "jquery": "^3.1.1",
     "morgan": "~1.7.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "react-router": "^3.0.2",
+    "redux": "^3.6.0",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.2.0",
+    "redux-thunk": "^2.2.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-plugin-transform-react-jsx": "^6.22.0",
     "babel-preset-latest": "^6.16.0",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "graceful-fs": "^4.1.11",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "proxy-middleware": "^0.15.0",
+    "redux-devtools": "^3.3.2",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.2.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   }
